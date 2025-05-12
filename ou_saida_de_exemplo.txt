@@ -1,0 +1,118 @@
+Exemplo 1 - Entrada e Saída Simples:
+
+> Input
+> Store 100
+> Load 100
+> Output
+> Halt
+
+Saída binária:
+
+0101 000000000000  # Input - Lê um valor do usuário
+0010 000001100100  # Store 100 - Armazena o valor em endereço 100
+0001 000001100100  # Load 100 - Carrega valor do endereço 100
+0110 000000000000  # Output - Mostra o valor
+0111 000000000000  # Halt - Encerra o programa
+
+------------------------------------------------------------------------------------------------------------------------
+
+Exemplo 2 - Soma de Dois Números:
+
+> Input
+> Store 100
+> Input
+> Add 100
+> Output
+> Halt
+
+Saída binária:
+
+0101 000000000000  # Lê primeiro número
+0010 000001100100  # Armazena em endereço 100
+0101 000000000000  # Lê segundo número
+0011 000001100100  # Soma com número do endereço 100
+0110 000000000000  # Mostra resultado
+0111 000000000000  # Encerra
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Exemplo 3 - Subtração de Dois Números:
+
+> Input
+> Store 100
+> Input
+> Store 101
+> Load 100
+> Sub 101
+> Output
+> Halt
+
+Saída binária:
+
+0101 000000000000  # Lê primeiro número
+0010 000001100100  # Armazena em 100
+0101 000000000000  # Lê segundo número
+0010 000001100101  # Armazena em 101
+0001 000001100100  # Carrega primeiro número
+0100 000001100101  # Subtrai segundo número
+0110 000000000000  # Mostra resultado
+0111 000000000000  # Encerra
+
+------------------------------------------------------------------------------------------------------------------------
+
+Exemplo 4 - Multiplicação por 2:
+
+> Input
+> Store 100
+> Load 100
+> Add 100
+> Output
+> Halt
+
+Saída binária:
+
+0101 000000000000  # Lê o número
+0010 000001100100  # Armazena em 100
+0001 000001100100  # Carrega o número
+0011 000001100100  # Soma com ele mesmo
+0110 000000000000  # Mostra resultado
+0111 000000000000  # Encerra
+
+------------------------------------------------------------------------------------------------------------------------
+
+Exemplo 5 - Maior de Dois Números:
+
+> Input
+> Store 100
+> Input
+> Store 101
+> Load 100
+> Sub 101
+> Skipcond 800
+> Jump 15
+> Load 100
+> Output
+> Halt
+> Load 101
+> Output
+> Halt
+
+Saída binária:
+
+0101 000000000000  # Lê primeiro número
+0010 000001100100  # Armazena em 100
+0101 000000000000  # Lê segundo número
+0010 000001100101  # Armazena em 101
+0001 000001100100  # Carrega primeiro número
+0100 000001100101  # Subtrai segundo número
+1000 110000000000  # Pula próxima instrução se AC > 0
+1001 000000001111  # Salta para carregar segundo número
+0001 000001100100  # Carrega primeiro número
+0110 000000000000  # Mostra resultado
+0111 000000000000  # Encerra
+0001 000001100101  # Carrega segundo número
+0110 000000000000  # Mostra resultado
+0111 000000000000  # Encerra
+
+------------------------------------------------------------------------------------------------------------------------
